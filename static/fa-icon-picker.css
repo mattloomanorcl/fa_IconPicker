@@ -1,0 +1,11 @@
+.faip-item { display: flex; gap: .25rem; align-items: center; }
+.faip-item input { flex: 1 1 auto; }
+.faip-dialog { padding-top: .75rem; }
+.faip-dialog #faip-search { width: 100%; margin-bottom: .75rem; }
+.faip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr)); gap: .5rem; overflow: auto; max-height: 33rem; }
+.faip-choice { min-height: 5rem; border: 1px solid #d9dfe3; background: #fff; border-radius: .25rem; padding: .5rem; cursor: pointer; text-align: center; }
+.faip-choice:hover, .faip-choice:focus { border-color: #0572ce; box-shadow: 0 0 0 1px #0572ce; }
+.faip-choice .fa { display: block; font-size: 1.5rem; margin-bottom: .35rem; }
+.faip-name { display: block; overflow-wrap: anywhere; font-size: .75rem; }
+.faip-empty { grid-column: 1 / -1; text-align: center; color: #666; }
+.faip-error { color: #c74634; }
