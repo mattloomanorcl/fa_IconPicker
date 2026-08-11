@@ -24,12 +24,16 @@ create or replace package body fa_icon_picker_plugin as
 
         sys.htp.p(
             '<div class="faip-item" id="' || l_item_name || '_FAIP">'
+            || '<div class="faip-value" style="position:relative;flex:1 1 auto;">'
+            || '<span class="fa ' || l_value || '" aria-hidden="true"'
+            || ' style="position:absolute;z-index:1;top:50%;left:.625rem;transform:translateY(-50%);pointer-events:none;"></span>'
             || '<input type="text" id="' || l_item_name || '" name="' || l_item_name
-            || '" value="' || l_value || '" class="text_field apex-item-text" readonly>'
-            || '<button type="button" class="t-Button t-Button--icon faip-open"'
+            || '" value="' || l_value || '" class="text_field apex-item-text"'
+            || ' style="width:100%;padding-left:2.25rem;">'
+            || '</div>'
+            || '<button type="button" class="t-Button faip-open"'
             || ' aria-label="Choose Font APEX icon" data-item="' || l_item_name || '"'
-            || ' data-ajax-id="' || apex_escape.html_attribute(apex_plugin.get_ajax_identifier) || '">'
-            || '<span class="fa ' || l_value || '" aria-hidden="true"></span></button></div>'
+            || ' data-ajax-id="' || apex_escape.html_attribute(apex_plugin.get_ajax_identifier) || '">...</button></div>'
         );
 
         l_result.is_navigable := not p_is_readonly and not p_is_printer_friendly;

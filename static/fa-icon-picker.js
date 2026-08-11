@@ -47,7 +47,7 @@
           .append($('<span class="faip-name"></span>').text(icon.name));
         $choice.on("click", function () {
           apex.item(itemName).setValue(icon.name);
-          $button.find(".fa").attr("class", "fa " + icon.name);
+          $button.siblings(".faip-value").find(".fa").attr("class", "fa " + icon.name);
           $dialog.dialog("close");
         });
         $grid.append($choice);
@@ -78,4 +78,8 @@
   }
 
   $(document).on("click", ".faip-open", function () { openPicker(this); });
+  $(document).on("input change", ".faip-value input", function () {
+    var value = $(this).val();
+    $(this).siblings(".fa").attr("class", value ? "fa " + value : "fa");
+  });
 })(apex.jQuery, apex);
